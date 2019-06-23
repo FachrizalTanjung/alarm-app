@@ -1,0 +1,49 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+
+<script th:src="@{/jquery/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/dataTables/js/jquery.dataTables.min.js}"></script>
+<script th:src="@{/dataTables/js/dataTables.bootstrap4.min.js}"></script>
+<script th:src="@{/dataTables/js/dataTables.responsive.min.js}"></script>
+<script th:src="@{/dataTables/js/responsive.bootstrap4.min.js}"></script>
+<script th:src="@{/js/consults.js}"></script>
+</head>
+<body>
+<br/>
+<br/>
+	<div class="container">
+		<div class="card">
+			<div class="card-header">Input Consults</div>
+				<div class="card-body">
+					<form name="insert" id="insert" method="post" onsubmit="validateSaveConsults()">
+						<div class="form-group">
+							<label for="">Subjects</label> 
+							<input type="text" class="form-control" name="subjects" id="subjects" required="required" />
+						</div>
+						<div class="form-group">
+							<label for="">Abouts</label> <input type="text" class="form-control" name="abouts" id="abouts" required="required" />
+						</div>
+						<div class="form-group">
+							<label for="">Solutions</label> <input type="text" class="form-control" name="solutions" id="solutions" required="required" />
+						</div>
+						<div class="form-group">
+							<label for="">Actions</label> <input type="text" class="form-control" name="actions" id="actions" required="required" />
+						</div>
+						<div class="form-group">
+							<label for="">Id</label> <input type="text" class="form-control" name="id" id="id" required="required" />
+						</div>
+						<div>
+							<button type="submit" id="btn-save" class="btn btn-primary">Save Consults</button>
+						</div>
+					</form>
+				</div>
+		</div>
+	</div>
+</body>
+</html>
