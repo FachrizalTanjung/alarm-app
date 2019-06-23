@@ -16,6 +16,19 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`dbalarm` /*!40100 DEFAULT CHARACTER SET
 
 USE `dbalarm`;
 
+/*Table structure for table `reminder` */
+
+DROP TABLE IF EXISTS `reminder`;
+
+CREATE TABLE `reminder` (
+  `id` int(11) NOT NULL auto_increment,
+  `content` text NOT NULL,
+  `active_date` datetime NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `reminder` */
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
