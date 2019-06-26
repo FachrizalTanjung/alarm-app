@@ -40,21 +40,23 @@
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-              <label for="inputPassword">Catatan</label>
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
+              <label for="inputEmail">Catatan</label>
             </div>
-          </div>
-          <div class="form-group">
+          </div><div class="form-group">
             <div class="form-label-group">
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-              <label for="inputPassword">Tanggal Sebelum Aktif</label>
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
+              <label for="inputEmail">Tanggal Sebelum Aktif</label>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="form-label-group">
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-              <label for="inputPassword">Kategori</label>
-            </div>
+          </div><div class="form-group">
+            <div class="dropdown form-group">
+						<button type="button" class="btn btn-primary dropdown-toggle form-control" data-toggle="dropdown">Kategori</button>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">Normal</a> 
+							<a class="dropdown-item active" href="#">Active</a> 
+							<a class="dropdown-item disabled" href="#">Disabled</a>
+						</div>
+					</div>
           </div>
           <a class="btn btn-primary btn-block" href="pengingat.html">Simpan</a>
         </form>
