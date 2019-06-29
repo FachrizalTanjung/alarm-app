@@ -5,19 +5,16 @@ $(document).ready(function(){
 function validateSaveKategori()  {
 	var kategori  = $("#kategori").val(); 
 	var file = $("#file").val();
-	var reminders = $("#reminders").val();
 
 	var data = new Object(); 
 	data.kategori  = kategori ;
 	data.file = file;
-	data.reminders = reminders;
 	
-	if (kategori !== '' && file !== '' 
-		&& reminders !== '' ) {
+	if (kategori !== '' && file !== '') {
 		var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "http://localhost:1000/alarm/rest/kategori/insert ",
+			"url": "http://localhost:1000/alarm-app/rest/kategori/insert",
 			"method": "POST",
 			"headers": {
 				"content-type": "application/json",

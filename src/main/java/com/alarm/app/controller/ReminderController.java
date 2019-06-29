@@ -15,9 +15,9 @@ public class ReminderController {
 	@Autowired
 	private ReminderService reminderService;
 	
-	@RequestMapping(value = "/pengingat")
+	@RequestMapping(value = "/reminder")
 	public String reminder() {
-		return "pengingat";
+		return "reminder";
 	}
 	
 	@RequestMapping(value = "/get-all-reminders")

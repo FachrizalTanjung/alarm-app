@@ -29,7 +29,6 @@ public class KategoriRest {
 		
 		kategori.setKategori(data.getKategori());
 		kategori.setFile(data.getFile());
-		kategori.setReminders(data.getReminders());
 		
 		kategoriDao.save(kategori);
 		return ResponseUtil.response(1, "Sukses");

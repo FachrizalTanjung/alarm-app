@@ -6,8 +6,8 @@ public class DtoReminder {
 
 	private Integer id;
 	private String catatan;
-	private Date tanggal_aktif;
-	private Date tanggal_sebelum_aktif;
+	private Date setTanggal_aktif;
+	private Date setTanggal_sebelum_aktif;
 
 	public Integer getId() {
 		return id;
@@ -25,20 +25,20 @@ public class DtoReminder {
 		this.catatan = catatan;
 	}
 
-	public Date getTanggal_aktif() {
-		return tanggal_aktif;
+	public Date getSetTanggal_aktif() {
+		return setTanggal_aktif;
 	}
 
-	public void setTanggal_aktif(Date tanggal_aktif) {
-		this.tanggal_aktif = tanggal_aktif;
+	public void setSetTanggal_aktif(Date setTanggal_aktif) {
+		this.setTanggal_aktif = setTanggal_aktif;
 	}
 
-	public Date getTanggal_sebelum_aktif() {
-		return tanggal_sebelum_aktif;
+	public Date getSetTanggal_sebelum_aktif() {
+		return setTanggal_sebelum_aktif;
 	}
 
-	public void setTanggal_sebelum_aktif(Date tanggal_sebelum_aktif) {
-		this.tanggal_sebelum_aktif = tanggal_sebelum_aktif;
+	public void setSetTanggal_sebelum_aktif(Date setTanggal_sebelum_aktif) {
+		this.setTanggal_sebelum_aktif = setTanggal_sebelum_aktif;
 	}
 
 }

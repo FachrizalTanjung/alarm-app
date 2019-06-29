@@ -17,7 +17,7 @@ function validateSaveReminder()  {
 		var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "http://localhost:1000/alarm/rest/reminder/insert ",
+			"url": "http://localhost:1000/alarm-app/rest/reminder/insert",
 			"method": "POST",
 			"headers": {
 				"content-type": "application/json",

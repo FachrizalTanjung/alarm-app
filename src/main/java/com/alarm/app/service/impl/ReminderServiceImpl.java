@@ -27,10 +27,11 @@ public class ReminderServiceImpl implements ReminderService {
 		List<Reminder> reminders = reminderDao.findAll();
 		for (Reminder reminder : reminders) {
 			DtoReminder dtoReminder = new DtoReminder();
+			
 			dtoReminder.setId(reminder.getId());
 			dtoReminder.setCatatan(reminder.getCatatan());
-			dtoReminder.setTanggal_aktif(reminder.getTanggalAktif());
-			dtoReminder.setTanggal_sebelum_aktif(reminder.getTanggalSebelumAktif());
+			dtoReminder.setSetTanggal_aktif(reminder.getTanggalSebelumAktif());
+			dtoReminder.setSetTanggal_sebelum_aktif(reminder.getTanggalSebelumAktif());
 			
 			dtoReminders.add(dtoReminder);
 		}
