@@ -13,9 +13,11 @@
 <title>Kategori</title>
 
 <!-- Custom fonts for this template-->
-<link href="sb-admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+<link href="sb-admin/vendor/fontawesome-free/css/all.min.css"
+	rel="stylesheet" type="text/css" />
 <!-- Page level plugin CSS-->
-<link href="sb-admin/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet" />
+<link href="sb-admin/vendor/datatables/dataTables.bootstrap4.css"
+	rel="stylesheet" />
 <!-- Custom styles for this template-->
 <link href="sb-admin/css/sb-admin.css" rel="stylesheet" />
 </head>
@@ -25,25 +27,20 @@
 		<div class="card card-login mx-auto mt-5">
 			<div class="card-header">Input Kategori</div>
 			<div class="card-body">
-				<form>
-					<div class="dropdown form-group">
-						<button type="button"
-							class="btn btn-primary dropdown-toggle form-control"
-							data-toggle="dropdown">Kategori</button>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Normal</a> <a
-								class="dropdown-item active" href="#">Active</a> <a
-								class="dropdown-item disabled" href="#">Disabled</a>
-						</div>
+				<form action="kategori" method="post">
+					<div class="form-group">
+						<input type="text" id="txtKategori" class="form-control"
+							placeholder="Masukkan Kategori" required="required"
+							autofocus="autofocus">
 					</div>
 					<div class="form-group">
-						<div class="form-label-group">
-							<input type="email" id="inputEmail" class="form-control"
-								placeholder="Email address" required="required"
-								autofocus="autofocus"> <label for="inputEmail">File</label>
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" id="txtFile">
+							<label class="custom-file-label" for="customFile">Choose
+								file</label>
 						</div>
 					</div>
-					<a class="btn btn-primary btn-block" href="kategori.html">Simpan</a>
+					<button type="submit" class="btn btn-primary">Simpan</button>
 				</form>
 			</div>
 		</div>
@@ -55,8 +52,15 @@
 	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
 </body>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	
+	<script src="sb-admin/js/kategori.js"></script>
+
 </html>

@@ -1,4 +1,4 @@
-package com.alarm.app.repository;
+package com.alarm.app.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

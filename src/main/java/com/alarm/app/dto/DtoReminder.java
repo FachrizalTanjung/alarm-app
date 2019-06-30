@@ -2,12 +2,23 @@ package com.alarm.app.dto;
 
 import java.util.Date;
 
+import com.alarm.app.util.CustomDateJsonDeserializer;
+import com.alarm.app.util.CustomDateJsonSerializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 public class DtoReminder {
 
 	private Integer id;
 	private String catatan;
-	private Date setTanggal_aktif;
-	private Date setTanggal_sebelum_aktif;
+	private Date membuatTanggal;
+	@JsonSerialize(using = CustomDateJsonSerializer.class)
+	@JsonDeserialize(using = CustomDateJsonDeserializer.class)
+	private Date tanggalAktif;
+	@JsonSerialize(using = CustomDateJsonSerializer.class)
+	@JsonDeserialize(using = CustomDateJsonDeserializer.class)
+	private Date tanggalSebelumAktif;
+	private Integer idKategori;
 
 	public Integer getId() {
 		return id;
@@ -25,20 +36,36 @@ public class DtoReminder {
 		this.catatan = catatan;
 	}
 
-	public Date getSetTanggal_aktif() {
-		return setTanggal_aktif;
+	public Date getMembuatTanggal() {
+		return membuatTanggal;
 	}
 
-	public void setSetTanggal_aktif(Date setTanggal_aktif) {
-		this.setTanggal_aktif = setTanggal_aktif;
+	public void setMembuatTanggal(Date membuatTanggal) {
+		this.membuatTanggal = membuatTanggal;
 	}
 
-	public Date getSetTanggal_sebelum_aktif() {
-		return setTanggal_sebelum_aktif;
+	public Date getTanggalAktif() {
+		return tanggalAktif;
 	}
 
-	public void setSetTanggal_sebelum_aktif(Date setTanggal_sebelum_aktif) {
-		this.setTanggal_sebelum_aktif = setTanggal_sebelum_aktif;
+	public void setTanggalAktif(Date tanggalAktif) {
+		this.tanggalAktif = tanggalAktif;
+	}
+
+	public Date getTanggalSebelumAktif() {
+		return tanggalSebelumAktif;
+	}
+
+	public void setTanggalSebelumAktif(Date tanggalSebelumAktif) {
+		this.tanggalSebelumAktif = tanggalSebelumAktif;
+	}
+
+	public Integer getIdKategori() {
+		return idKategori;
+	}
+
+	public void setIdKategori(Integer idKategori) {
+		this.idKategori = idKategori;
 	}
 
 }
