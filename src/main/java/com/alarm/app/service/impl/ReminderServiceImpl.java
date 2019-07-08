@@ -38,6 +38,8 @@ public class ReminderServiceImpl implements ReminderService {
 			dtoReminder.setCatatan(reminder.getCatatan());
 			dtoReminder.setTanggalAktif(reminder.getTanggalAktif());
 			dtoReminder.setTanggalSebelumAktif(reminder.getTanggalSebelumAktif());
+			dtoReminder.setIdKategori(reminder.getKategori().getIdKategori());
+			dtoReminder.setKategori(reminder.getKategori().getKategori());
 
 			dtoReminders.add(dtoReminder);
 		}
@@ -64,6 +66,32 @@ public class ReminderServiceImpl implements ReminderService {
 	}
 
 	@Override
+	public DataTablesResponse<DtoReminder> findByDate() {
+		DataTablesResponse<DtoReminder> response = new DataTablesResponse<>();
+		List<DtoReminder> dtoReminders = new ArrayList<>();
+		List<Reminder> reminders = (List<Reminder>) reminderDao.findByDateBefore();
+		if (reminders.isEmpty()) {
+			reminders = (List<Reminder>) reminderDao.findByDateAfter();
+		}
+
+		for (Reminder reminder : reminders) {
+			DtoReminder dtoReminder = new DtoReminder();
+
+			dtoReminder.setId(reminder.getId());
+			dtoReminder.setCatatan(reminder.getCatatan());
+			dtoReminder.setTanggalAktif(reminder.getTanggalAktif());
+			dtoReminder.setTanggalSebelumAktif(reminder.getTanggalSebelumAktif());
+			dtoReminder.setIdKategori(reminder.getKategori().getIdKategori());
+			dtoReminder.setKategori(reminder.getKategori().getKategori());
+
+			dtoReminders.add(dtoReminder);
+		}
+
+		response.setData(dtoReminders);
+		return response;
+	}
+
+	@Override
 	public DtoResponse insert(DtoReminder dtoReminder) {
 		Reminder reminder = new Reminder();
 
@@ -80,12 +108,6 @@ public class ReminderServiceImpl implements ReminderService {
 	@Override
 	@Transactional(readOnly = false)
 	public DtoResponse update(DtoReminder dtoReminder) {
-		
-		if (dtoReminder.getIdKategori() == null) {
-			return ResponseUtil.response(0, "Id Kategori tidak boleh kosong");
-		}
-		
-		
 		Reminder reminder = reminderDao.findOne(dtoReminder.getId());
 		if (reminder != null) {
 			reminder.setCatatan(dtoReminder.getCatatan());

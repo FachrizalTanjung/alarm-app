@@ -7,6 +7,7 @@ public class DtoKategori {
 	private Integer id;
 	private String kategori;
 	private MultipartFile file;
+	private byte[] fileData;
 
 	public Integer getId() {
 		return id;
@@ -30,6 +31,14 @@ public class DtoKategori {
 
 	public void setFile(MultipartFile file) {
 		this.file = file;
+	}
+
+	public byte[] getFileData() {
+		return fileData;
+	}
+
+	public void setFileData(byte[] fileData) {
+		this.fileData = fileData;
 	}
 
 }

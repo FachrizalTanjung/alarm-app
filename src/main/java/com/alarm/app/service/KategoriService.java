@@ -10,7 +10,7 @@ public interface KategoriService {
 
 	DataTablesResponse<DtoKategori> getAllKategori();
 
-	DataTablesResponse<DtoKategori> getKategoriById(Integer id);
+	DtoKategori getKategoriById(Integer id);
 
 	DtoResponse insert(DtoKategori kategori) throws IOException;
 

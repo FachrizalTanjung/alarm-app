@@ -10,6 +10,8 @@ public interface ReminderService {
 
 	DataTablesResponse<DtoReminder> getReminderById(Integer id);
 
+	DataTablesResponse<DtoReminder> findByDate();
+
 	DtoResponse insert(DtoReminder dtoReminder);
 
 	DtoResponse update(DtoReminder dtoReminder);

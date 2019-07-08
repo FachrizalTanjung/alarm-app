@@ -19,6 +19,7 @@ public class DtoReminder {
 	@JsonDeserialize(using = CustomDateJsonDeserializer.class)
 	private Date tanggalSebelumAktif;
 	private Integer idKategori;
+	private String kategori;
 
 	public Integer getId() {
 		return id;
@@ -66,6 +67,14 @@ public class DtoReminder {
 
 	public void setIdKategori(Integer idKategori) {
 		this.idKategori = idKategori;
+	}
+
+	public String getKategori() {
+		return kategori;
+	}
+
+	public void setKategori(String kategori) {
+		this.kategori = kategori;
 	}
 
 }

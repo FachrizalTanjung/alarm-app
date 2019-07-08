@@ -52,7 +52,7 @@ public class Kategori implements java.io.Serializable {
 		this.idKategori = idKategori;
 	}
 
-	@Column(name = "kategori", nullable = false, length = 50)
+	@Column(name = "kategori", nullable = false, length = 60)
 	public String getKategori() {
 		return this.kategori;
 	}
