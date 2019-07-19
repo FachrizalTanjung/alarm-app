@@ -92,6 +92,7 @@ public class ReminderServiceImpl implements ReminderService {
 	}
 
 	@Override
+	@Transactional(readOnly = false)
 	public DtoResponse insert(DtoReminder dtoReminder) {
 		Reminder reminder = new Reminder();
 

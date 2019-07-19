@@ -17,7 +17,14 @@ $(document).ready(function () {
         contentType: 'application/json',
         processData: false
     }).done(function (resp) {
-    	console.log(JSON.stingify(resp));
+    	console.log(JSON.stringify(resp));
+    	var html = '';
+    	for (var i = 0; i < resp.data.length; i++) {
+    		html += '<option value="' + resp.data[i].id + '">' + resp.data[i].kategori + '</option>';
+    	}
+    	$('#cbIdKategori').replaceWith(
+    			'<select class="form-control" id="cbIdKategori">'+html+
+                '</select>');
     }).fail(function () {
         alert('An error occurred please try again later.')
     });
@@ -38,7 +45,7 @@ $(document).ready(function () {
             url: action,
             cache: false,
             data: JSON.stringify(data),
-            contentType: false,
+            contentType: 'application/json',
             processData: false
         }).done(function () {
         	alert('Data berhasil disimpan');
