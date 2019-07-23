@@ -40,7 +40,8 @@ public class KategoriRest {
 		byte[] byteFile = dtoKategori.getFileData();
 		ByteArrayResource resource = new ByteArrayResource(byteFile);
 		return ResponseEntity.ok()
-				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + dtoKategori.getKategori() + "_" + ".pdf")
+				.header(HttpHeaders.CONTENT_DISPOSITION,
+						"attachment;filename=" + dtoKategori.getKategori() + UUID.randomUUID().toString() + ".pdf")
 				.contentType(MediaType.APPLICATION_PDF).contentLength(byteFile.length).body(resource);
 	}
 
@@ -65,8 +66,7 @@ public class KategoriRest {
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)
-	public @ResponseBody DtoResponse deleteKategori(@RequestBody Integer id)
-			throws IOException {
+	public @ResponseBody DtoResponse deleteKategori(@RequestBody Integer id) throws IOException {
 		return kategoriService.delete(id);
 	}
 
