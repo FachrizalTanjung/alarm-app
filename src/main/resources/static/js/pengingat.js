@@ -51,7 +51,7 @@ $(document).ready(function () {
 
     //Aksi saat klik tombol update
     $('#pengingat-table tbody').on('click', '#btn-update', function () {
-        var data = pengingatTable.row($(this).parents('tr')).data();
+    	var data = pengingatTable.row($(this).parents('tr')).data();
         localStorage.clear();
 
         //Menyimpan data untuk update
@@ -68,23 +68,25 @@ $(document).ready(function () {
     
   //Aksi saat klik tombol delete
     $('#pengingat-table tbody').on('click', '#btn-delete', function () {
-        var data = pengingatTable.row($(this).parents('tr')).data();
-        var settings = {
-    			"async": true,
-    			"crossDomain": true,
-    			"url": "rest/pengingat/delete",
-    			"method": "POST",
-    			"headers": {
-    				"content-type": "application/json",
-    				"cache-control": "no-cache"
-    			},
-    			"processData": false,
-    			"data": data.id
-    		}
+    	if (confirm("Apakah anda yakin ingin menghapus data?")) {
+    		var data = pengingatTable.row($(this).parents('tr')).data();
+            var settings = {
+        			"async": true,
+        			"crossDomain": true,
+        			"url": "rest/pengingat/delete",
+        			"method": "POST",
+        			"headers": {
+        				"content-type": "application/json",
+        				"cache-control": "no-cache"
+        			},
+        			"processData": false,
+        			"data": data.id
+        		}
 
-        $.ajax(settings).done(function (response) {
-        	alert('Data berhasil dihapus');
-        	window.location.href = 'pengingat';
-		});
+            $.ajax(settings).done(function (response) {
+            	alert('Data berhasil dihapus');
+            	window.location.href = 'pengingat';
+    		});
+        }
     });
 });
